@@ -28,7 +28,7 @@ services:
       - AIRFLOW**WEBSERVER**DEFAULT_UI_TIMEZONE=Asia/Seoul
       - AIRFLOW**CORE**DEFAULT_TIMEZONE=Asia/Seoul
     volumes: 
-      - ./dags:/opt/bitnami/airflow/dags
+      - /dags:/opt/bitnami/airflow/dags
   airflow-worker:
     image: docker.io/bitnami/airflow-worker:2-debian-10
     environment: 
@@ -41,7 +41,7 @@ services:
       - AIRFLOW**WEBSERVER**DEFAULT_UI_TIMEZONE=Asia/Seoul
       - AIRFLOW**CORE**DEFAULT_TIMEZONE=Asia/Seoul
     volumes: 
-      - ./dags:/opt/bitnami/airflow/dags
+      - /dags:/opt/bitnami/airflow/dags
   airflow:
     image: docker.io/bitnami/airflow:2-debian-10
     environment: 
