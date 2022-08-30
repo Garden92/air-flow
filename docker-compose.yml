@@ -54,7 +54,7 @@ services:
       - AIRFLOW**WEBSERVER**DEFAULT_UI_TIMEZONE=Asia/Seoul
       - AIRFLOW**CORE**DEFAULT_TIMEZONE=Asia/Seoul
     ports:
-      - 8080:8080
+      - 8888:8080
     volumes:
       - /dags:/opt/bitnami/airflow/dags
 
