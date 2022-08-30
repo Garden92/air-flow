@@ -56,7 +56,7 @@ services:
     ports:
       - 8080:8888
     volumes:
-      - ./dags:/opt/bitnami/airflow/dags
+      - /dags:/opt/bitnami/airflow/dags
 
 volumes:
   postgresql_data:
