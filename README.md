@@ -1,27 +1,21 @@
 # air-flow
 Air flow default template(Docker With Compose)
 
-## Init Command
-Start sh: 
+## env
+docker: #todo write version
+  memem: 4G
+docker-compose: 1.27.1(UP)
+
+## init-command
+- config
 ```sh
-docker-compose -f docker-compose.yml up -d
-```
-  
-Create Air-flow User:
-```sh
-# check & copy air-flow name
-docker ps
-# in Air flow 
-docker exec -it air-flow_airflow_1
-# show Air flow users
-airflow users list
-# create admin ROLE user
-airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+mkdir ./dags ./logs ./plugins
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+docker-compose up airflow-init
 ```
 
-## ISS
-"invalid mount config for type "bind": bind source path does not exist:" 
-> create dags folder
+- start: 
 ```sh
-mkdir dags
+docker-compose -f docker-compose.yml up -d
+# DEV docker-compose -f docker-compose-dev.yml up -d
 ```
