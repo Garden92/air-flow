@@ -2,9 +2,9 @@
 Air flow default template(Docker With Compose)
 
 ## env
-docker: #todo write version
-  memem: 4G
-docker-compose: 1.27.1(UP)
+docker: #todo write version  
+  memem: 4G  
+docker-compose: 1.27.1(UP)  
 
 ## init-command
 - config
